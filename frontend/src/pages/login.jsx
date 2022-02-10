@@ -12,7 +12,7 @@ export const Login = () => {
 
        const result = await axios.post("http://localhost:3000/auth/login",data);
        localStorage.setItem("jwt", result.data.token);
-       console.log(result);
+    //    console.log(result);
     }
 
 
