@@ -10,7 +10,9 @@ export const Profile = () => {
     useEffect(() => {
 
         const func = async () => { 
-            const result = await axios.get("http://localhost:3000/auth/getDetails");
+            const result = await axios.get({url:"http://localhost:3000/auth/getDetails", headers:{
+                "authorization":"Bearer "+localStorage.getItem("jwt")
+            }});
             const res=result.data;
             console.log(result);
             setFirstName(res.firstName);
@@ -20,7 +22,7 @@ export const Profile = () => {
             setAddress(res.address);
         }
         func();
-    },[]);
+    },[firstName]);
 
 
   return (

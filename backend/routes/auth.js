@@ -75,6 +75,7 @@ router.post("/login", async (req,res) => {
 
 router.get("/getDetails",protect, (req,res) => {
     const user = req.user;
+    console.log(user);
     res.status(200).json({
         status: "Success",
         data: {
